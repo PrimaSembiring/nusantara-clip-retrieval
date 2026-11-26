@@ -1,6 +1,6 @@
 # Log keputusan
 
-Setiap keputusan dicatat bersama alasannya. Entri baru ditambahkan per milestone. Angka hasil tidak ditulis di sini; angka ada di `mx_*/results/` dan README milestone.
+Setiap keputusan dicatat bersama alasannya. Entri baru ditambahkan per milestone. Angka hasil tidak ditulis di sini; angka ada di `results/mx/` dan `docs/mx_*.md`.
 
 ---
 
@@ -8,7 +8,7 @@ Setiap keputusan dicatat bersama alasannya. Entri baru ditambahkan per milestone
 
 | Keputusan | Alasan |
 |---|---|
-| Repo **private** sampai penilaian mata kuliah selesai | Kode tidak boleh terlihat kelompok lain selama perkuliahan berjalan (integritas akademik). Isinya juga masih perlu dipoles sebelum publik. |
+| Repo **publik** sejak awal | Dibangun terbuka sebagai portofolio, commit demi commit. Konsekuensinya: setiap commit langsung terlihat semua orang, jadi pemeriksaan sebelum commit dibuat ketat (tanpa data, path pribadi, kredensial, atau dokumen kelompok). |
 | **"Kode sama"**: dari kode asli, yang boleh berubah hanya path, perangkat, folder keluaran, komentar/penjelasan, dan pemecahan sel. Logika, model, seed, dan hiperparameter tetap | Repo ini untuk belajar dan portofolio, bukan eksperimen baru. Setiap notebook diakhiri sel yang membandingkan hasilnya dengan angka resmi yang dicatat di sel itu. Bila berbeda, perbedaannya dicatat, tidak diakali. |
 | Path **relatif terhadap repo** (`data/`, `cache/`). Dataset dihubungkan lewat **symlink** `data` yang diabaikan git | Kode asli memakai path absolut laptop pribadi. Path relatif membuat notebook bisa jalan di komputer lain tanpa mengedit kode, dan path pribadi tidak masuk repo. Dipilih daripada berkas konfigurasi terpisah agar tetap sederhana. |
 | Perangkat dipilih otomatis (`cuda` bila ada, selain itu `cpu`); di laptop sendiri dijalankan dengan GPU | Supaya belajar dan pelatihan lebih cepat. Hasil resmi dihitung di CPU, jadi angka GPU bisa berbeda di digit akhir. Sel verifikasi melaporkan selisihnya, bukan menghentikan notebook. Angka di README tetap angka resmi (CPU). |
