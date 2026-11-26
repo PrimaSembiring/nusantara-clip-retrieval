@@ -3,10 +3,9 @@
 # pernah di-commit tetap ada di riwayat walaupun dihapus kemudian.
 # =====================================================================
 
-# --- Symlink ke folder di luar repo (dataset, hasil resmi) dan cache ---
+# --- Symlink ke dataset di luar repo, dan cache ---
 # Tanpa garis miring di akhir: symlink dianggap berkas oleh git, bukan folder.
 /data
-/referensi
 /cache
 
 # --- Kredensial / token (HF, GitHub, dll.) ---
