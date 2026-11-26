@@ -1,0 +1,68 @@
+# =====================================================================
+# Yang TIDAK BOLEH masuk repo. Commit bersifat permanen: berkas yang
+# pernah di-commit tetap ada di riwayat walaupun dihapus kemudian.
+# =====================================================================
+
+# --- Symlink ke folder di luar repo (dataset, hasil resmi) dan cache ---
+# Tanpa garis miring di akhir: symlink dianggap berkas oleh git, bukan folder.
+/data
+/referensi
+/cache
+
+# --- Kredensial / token (HF, GitHub, dll.) ---
+.env
+*.env
+*token*
+secrets*
+
+# --- Dataset SEA-VL (CC BY-SA 4.0): tidak didistribusikan ulang di sini ---
+dataset/
+images/
+train.csv
+val.csv
+test*.csv
+*.jpg
+*.jpeg
+*.webp
+
+# --- Data / prediksi test privat ---
+prediksi*/
+prediksi*.csv
+predictions/
+
+# --- Cache embedding dan bobot model ---
+cache_*/
+*.npy
+*.npz
+*.pt
+*.pth
+*.safetensors
+*.bin
+
+# --- Hasil yang memuat caption atau gambar dataset (default tidak di-commit;
+#     diputuskan lagi saat repo dibuat publik) ---
+per_query*.csv
+*per_query*.csv
+contoh_query*.csv
+contoh_gagal*.png
+gambar_kasus_sulit*.png
+audit_temuan_baris*.csv
+
+# --- Dokumen kuliah, laporan kelompok, arsip ---
+*.pdf
+*.docx
+*.typ
+*.zip
+.~lock*
+
+# --- Python / Jupyter / editor ---
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+.cache/
+.vscode/
+.idea/
+.DS_Store

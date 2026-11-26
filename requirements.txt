@@ -1,0 +1,11 @@
+# Lingkungan tempat hasil resmi dihitung: Linux x86_64, Python 3.14.4, CPU.
+# Versi yang dikunci di bawah berasal dari metadata run resmi.
+torch==2.13.0
+sentence-transformers==6.3.0
+numpy==2.5.2
+pandas==3.0.5
+
+# Belum dikunci (versinya dicek dulu dari lingkungan nyata sebelum tag m1):
+pillow
+matplotlib
+jupyter
