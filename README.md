@@ -10,12 +10,12 @@ Given a photo of something from Indonesian culture (food, dance, architecture, t
 
 ## Status
 
-| Milestone | Folder | What it does | Status |
+| Milestone | Notebook | What it does | Status |
 |---|---|---|---|
-| M1: Baseline | `m1_baseline/` | Frozen CLIP encoders, 4 retrieval directions, Recall@K / mAP@10, language gap with bootstrap CI | in progress |
-| M2: Adapter | `m2_adapter/` | Small trainable adapter on the Indonesian text side, dev split from train | planned |
-| M3: Hard cases | `m3_kasus_sulit/` | Stress test on negation, relations, attributes and cultural markers | planned |
-| M4: Protocol | `m4_protokol/` | Evaluation protocol and reproduction script | planned |
+| M1: Baseline | `notebooks/m1_baseline.ipynb` | Frozen CLIP encoders, 4 retrieval directions, Recall@K / mAP@10, language gap with bootstrap CI | in progress |
+| M2: Adapter | `notebooks/m2_adapter.ipynb` | Small trainable adapter on the Indonesian text side, dev split from train | planned |
+| M3: Hard cases | `notebooks/m3_kasus_sulit.ipynb` | Stress test on negation, relations, attributes and cultural markers | planned |
+| M4: Protocol | `notebooks/m4_protokol.ipynb` | Evaluation protocol and reproduction script | planned |
 
 Results are added here only after the milestone notebook reproduces the original numbers exactly (each notebook ends with a verification cell).
 
@@ -36,16 +36,19 @@ Results are added here only after the milestone notebook reproduces the original
 
 ```
 nusantara-clip-retrieval/
+├── pipeline/               # shared code used by every milestone
+│   ├── config.py           #   paths, seed, models, device
+│   ├── data.py             #   data loading + leakage checks
+│   ├── embedding.py        #   frozen encoders + embedding cache
+│   └── metrics.py          #   scoring, Recall@K, mAP@10, bootstrap
+├── notebooks/              # one notebook per milestone (m1_baseline.ipynb, ...)
+├── results/                # aggregate result tables per milestone (results/m1/, ...)
+├── docs/
+│   ├── m1_baseline.md      # milestone write-ups (Indonesian)
+│   ├── belajar/            # study notes per milestone (Indonesian)
+│   └── keputusan.md        # decision log with reasons (Indonesian)
 ├── README.md
-├── requirements.txt
-├── common/                 # shared pipeline code (data loading, encoders, cache, scoring)
-├── m1_baseline/            # notebook + README + aggregate results per milestone
-├── m2_adapter/
-├── m3_kasus_sulit/
-├── m4_protokol/
-└── docs/
-    ├── belajar/            # study notes per milestone (Indonesian)
-    └── keputusan.md        # decision log with reasons (Indonesian)
+└── requirements.txt
 ```
 
 ## Setup
